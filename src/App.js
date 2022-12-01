@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import "./styles/fonts.css";
 import Logo from "./components/Logo";
 import GlobalStyle from "./styles/GlobalStyle";
 
