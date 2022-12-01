@@ -19,10 +19,7 @@ const StyledCardContainer = styled.main`
     justify-content: flex-start;
     align-items: center;
 
-    height: 100%;
     width: 100%;
 
-    & :nth-child(n+1){
-        margin-bottom: 10px;
-    }
+    overflow: scroll;
 `;
