@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-export default function Card(){
+export default function Card(props){
     return (
         <>
             <StyledCard>
-                <span>Pergunta 1</span>
-                <ion-icon name="play-outline"></ion-icon>
+                {props.children}
             </StyledCard>
         </>
     );
