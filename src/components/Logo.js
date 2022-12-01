@@ -16,7 +16,7 @@ const LogoHeader = styled.header`
     justify-content: center;
     align-items: center;
 
-    padding-top: 40px;
+    padding: 40px 0;
     width: 100%;
 `;
 
