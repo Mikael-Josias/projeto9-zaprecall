@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Logo from "./components/Logo";
 import GlobalStyle from "./styles/GlobalStyle";
 
 export default function App() {
@@ -6,7 +7,7 @@ export default function App() {
     <StyledApp>
       <GlobalStyle/>
       <AppContainer>
-        
+        <Logo/>
       </AppContainer>
     </StyledApp>
   );
