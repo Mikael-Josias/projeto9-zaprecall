@@ -1,27 +1,20 @@
 import styled from "styled-components";
 
+import {CardContextOne, CardContextTwo} from "./CardContext";
+
 export default function Card(props){
     return (
-        <>
-            <StyledCard>
-                {props.children}
-            </StyledCard>
-        </>
+        <StyledCard>
+            <CardContextOne/>
+        </StyledCard>
     );
 }
 
-const StyledCard = styled.div`
-    display: flex;
-    justify-content: space-between;
-    font-family: 'Recursive', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-
+const StyledCard = styled.li`
     background-color: white;
     border-radius: 5px;
-
     margin: 0 auto 25px auto;
-    width: 300px;
-
-    box-shadow: 1px 1px .5px black;
+    min-height: 65px;
+    min-width: 300px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 `;

@@ -1,32 +1,26 @@
 import styled from "styled-components";
+import { useState } from "react";
+
 import "./styles/fonts.css";
-import Logo from "./components/Logo";
 import GlobalStyle from "./styles/GlobalStyle";
-import CardContainer from "./components/CardContainer";
+
+import RecallPage from "./components/RecallPage";
+import HomePage from "./components/HomePage";
 
 export default function App() {
-  return (
-    <StyledApp>
-      <GlobalStyle/>
-      <AppContainer>
-        <Logo/>
-        <CardContainer/>
-      </AppContainer>
-    </StyledApp>
-  );
+
+	const [statusPage, setStatusage] = useState(true);
+
+	return (
+    	<Container>
+			<GlobalStyle/>
+			{statusPage? <RecallPage/> : <HomePage/>}
+	    </Container>
+	);
 }
 
-const StyledApp = styled.div`
-  background-color: #FB6B6B;
-
-  height: 100vh;
-  width: 100%;
-
-  overflow: scroll;
-`;
-
-const AppContainer = styled.div`
-  margin: auto;
-  height: 100%;
-  width: 375px;
+const Container = styled.div`
+	background-color: #FB6B6B;
+	min-height: 100vh;
+	width: 100%;
 `;

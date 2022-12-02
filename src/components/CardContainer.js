@@ -1,25 +1,31 @@
 import styled from "styled-components";
+
+import cards from "../cards";
+
 import Card from "./Card";
-import {CardContextOne, CardContextTwo} from "./CardContext";
 
 export default function CardContainer(){
 
     return (
-        <StyledCardContainer>
-            <Card>
-                <CardContextOne/>
-            </Card>
-        </StyledCardContainer>
+        <Main>
+            <ul>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+            </ul>
+        </Main>
     );
 }
 
-const StyledCardContainer = styled.main`
+const Main = styled.main`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-
     width: 100%;
-
-    overflow: scroll;
 `;
