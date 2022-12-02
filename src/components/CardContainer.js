@@ -9,7 +9,7 @@ export default function CardContainer(){
                 <CardContextOne/>
             </Card>
             <Card>
-                <CardContextOne/>
+                <CardContextTwo/>
             </Card>
             <Card>
                 <CardContextOne/>

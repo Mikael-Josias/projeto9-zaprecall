@@ -20,7 +20,6 @@ const StyledCard = styled.div`
     background-color: white;
     border-radius: 5px;
 
-    padding: 20px 20px 0px 10px;
     margin: 0 auto 25px auto;
     width: 300px;
 
