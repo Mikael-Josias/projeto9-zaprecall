@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import flipSvg from "../assets/Vector.svg";
 
@@ -22,22 +23,21 @@ export function CardContextOne(props){
 }
 
 export function CardContextTwo(props){
-
+    const {flipped, setFlipped} = props;
     const {index} = props;
     const {cardInfo} = props;
 
-
     return (
         <ContextTwo>
-            <CardUpFace>
-                <ContextSpanContent context={2}>O que é JSX?</ContextSpanContent>
+            <CardUpFace flipped={flipped}>
+                <ContextSpanContent context={2}>{cardInfo.question}</ContextSpanContent>
                 <ContextTwoOptions>
                     <ContextIcon>
-                        <img src={flipSvg} alt="flip card" />
+                        <img src={flipSvg} alt="flip card" onClick={() => setFlipped(true)}/>
                     </ContextIcon>
                 </ContextTwoOptions>
             </CardUpFace>
-            <CardDownFace>
+            <CardDownFace flipped={flipped}>
                 <ContextSpanContent context={2}>JSX é uma sintaxe para escrever HTML dentro do JS</ContextSpanContent>
                 <ContextTwoOptions>
                     <ContextTwoOptionsButton btnColor="#FF3030">Não lembrei</ContextTwoOptionsButton>
@@ -62,12 +62,12 @@ const ContextTwo = styled.div`
     display: flex;
     flex-direction: column;
     padding: 20px 10px 10px 10px;
-    margin-bottom: 10px;
     height: 100%;
     width: 100%;
 `;
 
 const CardUpFace = styled.div`
+    display: ${props => props.flipped? "none": ""};
     height: 100%;
     width: 100%;
 
@@ -78,7 +78,8 @@ const CardUpFace = styled.div`
 `;
 
 const CardDownFace = styled.div`
-    visibility: collapse;
+    display: ${props => props.flipped? "": "none"};
+    transform: rotateY(180deg);
     height: 100%;
     width: 100%;
 `;
