@@ -3,29 +3,9 @@ import Card from "./Card";
 import {CardContextOne, CardContextTwo} from "./CardContext";
 
 export default function CardContainer(){
+
     return (
         <StyledCardContainer>
-            <Card>
-                <CardContextOne/>
-            </Card>
-            <Card>
-                <CardContextTwo/>
-            </Card>
-            <Card>
-                <CardContextOne/>
-            </Card>
-            <Card>
-                <CardContextOne/>
-            </Card>
-            <Card>
-                <CardContextOne/>
-            </Card>
-            <Card>
-                <CardContextOne/>
-            </Card>
-            <Card>
-                <CardContextOne/>
-            </Card>
             <Card>
                 <CardContextOne/>
             </Card>
