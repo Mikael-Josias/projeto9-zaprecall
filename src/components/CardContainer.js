@@ -1,10 +1,19 @@
 import styled from "styled-components";
 import Card from "./Card";
-import CardContextOne from "./CardContextOne";
+import {CardContextOne, CardContextTwo} from "./CardContext";
 
 export default function CardContainer(){
     return (
         <StyledCardContainer>
+            <Card>
+                <CardContextOne/>
+            </Card>
+            <Card>
+                <CardContextOne/>
+            </Card>
+            <Card>
+                <CardContextOne/>
+            </Card>
             <Card>
                 <CardContextOne/>
             </Card>
