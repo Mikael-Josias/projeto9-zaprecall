@@ -5,18 +5,10 @@ import cards from "../cards";
 import Card from "./Card";
 
 export default function CardContainer(){
-
     return (
         <Main>
             <ul>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
+                {cards.map((c, i) => <Card index={i + 1} key={i + 1} cardInfo={c}/>)}
             </ul>
         </Main>
     );

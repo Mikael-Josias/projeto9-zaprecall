@@ -3,9 +3,12 @@ import styled from "styled-components";
 import {CardContextOne, CardContextTwo} from "./CardContext";
 
 export default function Card(props){
+    const {index} = props;
+    const {cardInfo} = props;
+    console.log(cardInfo);
     return (
         <StyledCard>
-            <CardContextOne/>
+            {!cardInfo.open? <CardContextOne index={index}/> : <CardContextTwo/>}
         </StyledCard>
     );
 }

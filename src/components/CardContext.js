@@ -1,10 +1,13 @@
 import styled from "styled-components";
 import flipSvg from "../assets/Vector.svg";
 
-export function CardContextOne(){
+export function CardContextOne(props){
+
+    const {index} = props;
+
     return (
         <ContextOne>
-            <ContextSpanContent context={1}>Pergunta 1</ContextSpanContent>
+            <ContextSpanContent context={1}>Pergunta {index}</ContextSpanContent>
             <ContextIcon>
                 <ion-icon name="play-outline"></ion-icon>
             </ContextIcon>
