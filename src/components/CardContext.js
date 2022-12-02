@@ -4,18 +4,29 @@ import flipSvg from "../assets/Vector.svg";
 export function CardContextOne(props){
 
     const {index} = props;
+    const {cardInfo} = props;
+    const {setOpen} = props;
+
+    function openCard(){
+        setOpen(true);
+    }
 
     return (
         <ContextOne>
             <ContextSpanContent context={1}>Pergunta {index}</ContextSpanContent>
             <ContextIcon>
-                <ion-icon name="play-outline"></ion-icon>
+                <ion-icon name="play-outline" onClick={openCard}></ion-icon>
             </ContextIcon>
         </ContextOne>
     );
 }
 
-export function CardContextTwo(){
+export function CardContextTwo(props){
+
+    const {index} = props;
+    const {cardInfo} = props;
+
+
     return (
         <ContextTwo>
             <CardUpFace>
@@ -42,18 +53,14 @@ const ContextOne = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 20px 20px 20px 10px;
-
     height: 100%;
     width: 100%;
-    position: relative;
 `;
 
 const ContextTwo = styled.div`
     display: flex;
     flex-direction: column;
-
     padding: 20px 10px 10px 10px;
     margin-bottom: 10px;
     height: 100%;
@@ -66,7 +73,7 @@ const CardUpFace = styled.div`
 
     div{
         justify-content: flex-end;
-        padding-right: 15px;
+        padding-right: 5px;
     }
 `;
 
