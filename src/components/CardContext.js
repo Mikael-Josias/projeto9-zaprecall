@@ -38,7 +38,7 @@ export function CardContextTwo(props){
                 </ContextTwoOptions>
             </CardUpFace>
             <CardDownFace flipped={flipped}>
-                <ContextSpanContent context={2}>JSX é uma sintaxe para escrever HTML dentro do JS</ContextSpanContent>
+                <ContextSpanContent context={2}>{cardInfo.answer}</ContextSpanContent>
                 <ContextTwoOptions>
                     <ContextTwoOptionsButton btnColor="#FF3030">Não lembrei</ContextTwoOptionsButton>
                     <ContextTwoOptionsButton btnColor="#FF922E">Quase não lembrei</ContextTwoOptionsButton>
