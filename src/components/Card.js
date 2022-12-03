@@ -5,15 +5,23 @@ import {CardContextOne, CardContextTwo} from "./CardContext";
 
 export default function Card(props){
 
+    const responseValues = {
+        notResponded: 0,
+        correctZap: 1,
+        almostCorrect: 2,
+        incorrectAnswer: 3
+    };
+
     const [open, setOpen] = useState(false);
     const [flipped, setFlipped] = useState(false);
-
+    const [cardAnswer, setCardAnswer] = useState(responseValues.notResponded);
+    
     const {index} = props;
     const {cardInfo} = props;
-    
+
     return (
         <StyledCard open={open} flipped={flipped}>
-            {!open? <CardContextOne index={index} cardInfo={cardInfo} setOpen={setOpen}/> : <CardContextTwo index={index} cardInfo={cardInfo} flipped={flipped} setFlipped={setFlipped}/>}
+            {!open? <CardContextOne index={index} flipped={flipped} setOpen={setOpen} cardAnswer={cardAnswer} responseValues={responseValues}/> : <CardContextTwo cardInfo={cardInfo} flipped={flipped} setOpen={setOpen} setFlipped={setFlipped} setCardAnswer={setCardAnswer} responseValues={responseValues}/>}
         </StyledCard>
     );
 }
