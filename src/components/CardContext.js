@@ -35,7 +35,7 @@ export function CardContextOne(props){
 
     return (
         <ContextOne flipped={flipped}>
-            <ContextSpanContent context={1} colored={textColor}>Pergunta {index}</ContextSpanContent>
+            <ContextSpanContent context={1} answer={cardAnswer} colored={textColor}>Pergunta {index}</ContextSpanContent>
             <ContextIcon colored={textColor}>
                 <ion-icon name={iconName} onClick={openCard}></ion-icon>
             </ContextIcon>
@@ -58,7 +58,7 @@ export function CardContextTwo(props){
     return (
         <ContextTwo>
             <CardUpFace flipped={flipped}>
-                <ContextSpanContent context={2}>{cardInfo.question}</ContextSpanContent>
+                <ContextSpanContent context={2} answer={0}>{cardInfo.question}</ContextSpanContent>
                 <ContextTwoOptions>
                     <ContextIcon>
                         <img src={flipSvg} alt="flip card" onClick={() => setFlipped(true)}/>
@@ -66,7 +66,7 @@ export function CardContextTwo(props){
                 </ContextTwoOptions>
             </CardUpFace>
             <CardDownFace flipped={flipped}>
-                <ContextSpanContent context={2}>{cardInfo.answer}</ContextSpanContent>
+                <ContextSpanContent context={2} answer={0}>{cardInfo.answer}</ContextSpanContent>
                 <ContextTwoOptions>
                     <ContextTwoOptionsButton btnColor="#FF3030" value={responseValues.incorrectAnswer} onClick={(e) => changeCardAnswerValue(e.target)}>Não lembrei</ContextTwoOptionsButton>
                     <ContextTwoOptionsButton btnColor="#FF922E" value={responseValues.almostCorrect} onClick={(e) => changeCardAnswerValue(e.target)}>Quase não lembrei</ContextTwoOptionsButton>
@@ -117,6 +117,7 @@ const ContextSpanContent = styled.span`
     font-family: 'Recursive', sans-serif;
     font-size: ${props => props.context === 1? "16px" : "18px"};
     font-weight: ${props => props.context === 1? "700" : "400"};
+    text-decoration: ${props => props.answer == 0? "" : "line-through"};
     color: ${props => props.colored !== "black"? props.colored : "black"};
 `;
 
