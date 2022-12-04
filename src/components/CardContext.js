@@ -12,16 +12,20 @@ export function CardContextOne(props){
     
     let textColor = "black";
     let iconName = "play-outline";
+    let dataText = "play-btn";
 
     if (cardAnswer == 1) {
         textColor = "#2FBE34";
         iconName = "checkmark-circle";
+        dataText = "zap-icon";
     }else if (cardAnswer == 2) {
         textColor = "#FF922E";
-        iconName = "help-circle";        
+        iconName = "help-circle";
+        dataText = "partial-icon";        
     }else if (cardAnswer == 3) {
         textColor = "#FF3030";
         iconName = "close-circle";
+        dataText = "no-icon";
     }
 
 
@@ -33,9 +37,9 @@ export function CardContextOne(props){
 
     return (
         <ContextOne flipped={flipped}>
-            <ContextSpanContent context={1} answer={cardAnswer} colored={textColor}>Pergunta {index}</ContextSpanContent>
+            <ContextSpanContent context={1} answer={cardAnswer} colored={textColor} onClick={openCard} data-test="flashcard-text">Pergunta {index}</ContextSpanContent>
             <ContextIcon colored={textColor}>
-                <ion-icon name={iconName} onClick={openCard}></ion-icon>
+                <ion-icon name={iconName} onClick={openCard} data-test="play-btn"></ion-icon>
             </ContextIcon>
         </ContextOne>
     );
@@ -59,19 +63,19 @@ export function CardContextTwo(props){
     return (
         <ContextTwo>
             <CardUpFace flipped={flipped}>
-                <ContextSpanContent context={2} answer={0}>{cardInfo.question}</ContextSpanContent>
+                <ContextSpanContent context={2} answer={0} data-test="flashcard-text">{cardInfo.question}</ContextSpanContent>
                 <ContextTwoOptions>
                     <ContextIcon>
-                        <img src={flipSvg} alt="flip card" onClick={() => setFlipped(true)}/>
+                        <img src={flipSvg} alt="flip card" onClick={() => setFlipped(true)} data-test="turn-btn"/>
                     </ContextIcon>
                 </ContextTwoOptions>
             </CardUpFace>
             <CardDownFace flipped={flipped}>
-                <ContextSpanContent context={2} answer={0}>{cardInfo.answer}</ContextSpanContent>
+                <ContextSpanContent context={2} answer={0} data-test="flashcard-text">{cardInfo.answer}</ContextSpanContent>
                 <ContextTwoOptions>
-                    <ContextTwoOptionsButton btnColor="#FF3030" value={responseValues.incorrectAnswer} onClick={(e) => changeCardAnswerValue(e.target)}>Não lembrei</ContextTwoOptionsButton>
-                    <ContextTwoOptionsButton btnColor="#FF922E" value={responseValues.almostCorrect} onClick={(e) => changeCardAnswerValue(e.target)}>Quase não lembrei</ContextTwoOptionsButton>
-                    <ContextTwoOptionsButton btnColor="#2FBE34" value={responseValues.correctZap} onClick={(e) => changeCardAnswerValue(e.target)}>Zap!</ContextTwoOptionsButton>
+                    <ContextTwoOptionsButton btnColor="#FF3030" value={responseValues.incorrectAnswer} onClick={(e) => changeCardAnswerValue(e.target)} data-test="no-btn">Não lembrei</ContextTwoOptionsButton>
+                    <ContextTwoOptionsButton btnColor="#FF922E" value={responseValues.almostCorrect} onClick={(e) => changeCardAnswerValue(e.target)} data-test="partial-btn">Quase não lembrei</ContextTwoOptionsButton>
+                    <ContextTwoOptionsButton btnColor="#2FBE34" value={responseValues.correctZap} onClick={(e) => changeCardAnswerValue(e.target)} data-test="zap-btn">Zap!</ContextTwoOptionsButton>
                 </ContextTwoOptions>
             </CardDownFace>
         </ContextTwo>

@@ -7,7 +7,7 @@ export default function Counter(props){
 
 
     return (
-        <CounterContainer>
+        <CounterContainer data-test="footer">
             <span>{`${cardCounter}/${cards.length} CONCLUÍDOS`}</span>
         </CounterContainer>
     );
