@@ -39,7 +39,7 @@ export function CardContextOne(props){
         <ContextOne flipped={flipped}>
             <ContextSpanContent context={1} answer={cardAnswer} colored={textColor} onClick={openCard} data-test="flashcard-text">Pergunta {index}</ContextSpanContent>
             <ContextIcon colored={textColor}>
-                <ion-icon name={iconName} onClick={openCard} data-test="play-btn"></ion-icon>
+                <ion-icon name={iconName} onClick={openCard} data-test={dataText}></ion-icon>
             </ContextIcon>
         </ContextOne>
     );
