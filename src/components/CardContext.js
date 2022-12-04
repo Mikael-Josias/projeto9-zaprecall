@@ -93,6 +93,7 @@ const ContextOne = styled.div`
 `;
 
 const ContextTwo = styled.div`
+    background-color: #FFFFD4;
     display: flex;
     flex-direction: column;
     padding: 20px 10px 10px 10px;
