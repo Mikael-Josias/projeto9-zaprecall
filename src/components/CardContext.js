@@ -10,7 +10,6 @@ export function CardContextOne(props){
     const {flipped} = props;
     const {responseValues} = props;
     
-    console.log(cardAnswer)
     let textColor = "black";
     let iconName = "play-outline";
 
@@ -25,8 +24,7 @@ export function CardContextOne(props){
         iconName = "close-circle";
     }
 
-    console.log(textColor);
-    console.log(iconName);
+
     function openCard(){
         if (cardAnswer == 0) {
             setOpen(true);   
@@ -49,8 +47,11 @@ export function CardContextTwo(props){
     const {setOpen} = props;
     const {setCardAnswer} = props;
     const {responseValues} = props;
-
+    const {cardCounter, setCardCounter} = props;
+    
     function changeCardAnswerValue(e){
+        cardInfo.response = e.value;
+        setCardCounter(cardCounter + 1);
         setCardAnswer(e.value);
         setOpen(false);
     }

@@ -18,10 +18,11 @@ export default function Card(props){
     
     const {index} = props;
     const {cardInfo} = props;
+    const {cardCounter, setCardCounter} = props;
 
     return (
         <StyledCard open={open} flipped={flipped}>
-            {!open? <CardContextOne index={index} flipped={flipped} setOpen={setOpen} cardAnswer={cardAnswer} responseValues={responseValues}/> : <CardContextTwo cardInfo={cardInfo} flipped={flipped} setOpen={setOpen} setFlipped={setFlipped} setCardAnswer={setCardAnswer} responseValues={responseValues}/>}
+            {!open? <CardContextOne index={index} flipped={flipped} setOpen={setOpen} cardAnswer={cardAnswer} responseValues={responseValues}/> : <CardContextTwo cardInfo={cardInfo} flipped={flipped} setOpen={setOpen} setFlipped={setFlipped} setCardAnswer={setCardAnswer} responseValues={responseValues} cardCounter={cardCounter} setCardCounter={setCardCounter}/>}
         </StyledCard>
     );
 }

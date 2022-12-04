@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
-import cards from "../cards";
-
 import Card from "./Card";
 
-export default function CardContainer(){
+export default function CardContainer(props){
+    const {cards} = props;
+    const {cardCounter, setCardCounter} = props;
+
     return (
         <Main>
             <ul>
-                {cards.map((c, i) => <Card index={i + 1} key={i + 1} cardInfo={c}/>)}
+                {cards.map((c, i) => <Card index={i + 1} key={i + 1} cardInfo={c} cardCounter={cardCounter} setCardCounter={setCardCounter}/>)}
             </ul>
         </Main>
     );
